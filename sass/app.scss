@@ -1,0 +1,362 @@
+// Global Foundation Settings
+@import "settings";
+
+// Comment out this import if you are customizing you imports below
+@import "foundation";
+
+// foundation fixes
+
+label {
+	display: inline-block;
+}
+
+form.custom .custom {
+	cursor: pointer;
+}
+
+hr {
+	border-color: darken($body-bg, 25%);
+}
+
+.panel hr {
+	border-color: lighten($body-font-color, 25%);
+}
+
+.orbit-container .orbit-slides-container {
+	text-align: center;
+	
+	img {
+		display: inline-block;
+	}
+}
+
+// Compass
+
+@import "compass";
+
+// Vertical rythm
+
+/*
+$base-font-size: 16px;
+$base-line-height: 24px;
+@include establish-baseline;
+
+p {
+	@include adjust-font-size-to(16px);
+	@include leader(0);
+	@include trailer(1);
+}
+*/
+
+// helpers
+
+div.debug {
+	@include alert(#A83837);
+}
+
+.center {
+	text-align: center;
+}
+
+.hidden {
+	display: none;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.logo {
+	margin-bottom: $panel-margin-bottom;
+	text-align: center;
+}
+
+.space {
+	margin-top: 20px;
+}
+
+.full-width {
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+	max-width: 100%;
+}
+
+// Welcome
+
+.welcome-flag {
+	float: right;
+	margin: 10px;
+}
+
+// Top bar
+
+.top-bar-section {
+	li a:not(.button):hover {
+		background-color: lighten($topbar-bg, 10%);
+	}
+
+	ul {
+		li.active > a:hover {
+			background-color: $body-bg;
+		}
+
+		li.active > a {
+			background-color: $body-bg;
+			color: $topbar-bg;
+		}
+
+		li > a.button {
+			line-height: 2em;
+		}
+	}
+}
+
+.title-area {
+	img {
+		height: 20px;
+		margin: ($topbar-height - 20) / 2 10px 0 10px;
+	}
+
+	a {
+		display: inline-block;
+		height: $topbar-height;
+	}
+}
+
+.top-bar-section img {
+	height: 20px;
+	margin-top: ($topbar-height - 20) / 2;
+}
+
+.expanded .top-bar-section img {
+	margin-top: 0;
+}
+
+// Books
+
+#books {
+	background: url(../images/covers/left.jpg) top left repeat-y,
+				url(../images/covers/right.jpg) top right repeat-y,
+				url(../images/covers/shelf.jpg) repeat;
+	padding: 0 10px;
+
+	a {
+		color: $body-font-color;
+	}
+}
+
+.book {
+	width: 130px;
+	height: 190px;
+	
+	background: url(../images/covers/cover.jpg);
+	
+	margin: 15px 10px 30px 10px;
+	position: relative;
+	
+	display: inline-block;
+	vertical-align: top;
+	
+	padding: 10px 0 5px 10px;
+	
+	font-size: 0.7em;
+}
+
+.book-author {
+	text-align: center;
+	padding: 0 5px 0 5px;
+	
+	margin-bottom: 5px;
+}
+
+.cover {
+	width: 100px;
+	height: 110px;
+	overflow: hidden;
+	
+	margin-left: 10px;
+}
+
+.book-title {
+	text-align: center;
+	
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	width: 100%;
+	
+	padding: 0 5px 0 15px;
+	margin-bottom: 0;
+	
+	font-weight: bold;
+}
+
+// Tale
+
+h1.title {
+	line-height: 1em;
+	@include trailer(0);
+}
+
+h2.author {
+	@include leader(0);
+	line-height: 1em;
+}
+
+em.author {
+	float: right;
+	font-size: 0.8em;
+}
+
+#tale {
+	background: url(../images/book/top.jpg) repeat-x top right,
+				url(../images/book/bottom.jpg) repeat-x bottom right,
+				url(../images/book/outer.png) repeat-y right top,
+				url(../images/book/outer-left.png) repeat-y left top,
+				lighten($body-bg, 10%);
+	padding-left: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#outer {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 100%;
+	
+	background: url(../images/book/top.jpg) repeat-x top left,
+				url(../images/book/bottom.jpg) repeat-x bottom left,
+				url(../images/book/right.png) repeat-y right top,
+				url(../images/book/left.png) repeat-y left top,
+				lighten($body-bg, 10%);
+}
+
+// 		fix #outer sticking out of body
+#cut {
+	overflow-x: hidden;
+}
+
+.highlight {
+	@extend .has-tip;
+	//font-weight: normal;
+	color: $primary-color;
+	border-color: $primary-color;
+	cursor: pointer;
+}
+
+// Author panel
+
+div.author {
+	@include panel;
+}
+
+// Dictionary
+
+// 		stickit!
+
+#tale-inner {
+	position: relative;
+	z-index: 1;
+}
+
+.fill-container {
+	overflow: hidden;
+}
+
+.fill-inner {
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+
+.stickem-container {
+	position: relative;
+}
+
+.stickit {
+    position: fixed;
+    top: 0;
+	left: 0;
+	
+	width: 100%;
+}
+
+.row-top {
+	@include grid-row;
+}
+
+.stickit-end {
+    bottom: 40px;
+    position: absolute;
+    right: 0;
+}
+
+#dictBox-large {
+	padding-top: 20px;
+}
+
+p.translation {
+	overflow: hidden;
+}
+
+// 		flags
+
+@import "flags-small/*.png";
+@include all-flags-small-sprites;
+
+div.flag {
+	float: left;
+	width: 40px;
+	height: 23px;
+	margin-right: 10px;
+}
+
+// footer
+
+#footer {
+	margin-top: 20px;
+	margin-bottom: 0;
+
+	img {
+		height: 20px;
+		margin-bottom: -5px;
+	}
+}
+
+// Cookies
+
+.cookies-container {
+	margin-bottom: $panel-margin-bottom;
+}
+
+div.cookies {
+	@include alert($header-font-color);
+	
+	z-index: 2;
+	
+	text-align: center;
+	
+	margin-bottom: 0;
+	
+	.close {
+		@include alert-close;
+		color: $body-font-color;
+	}
+}
+
+div.cookies-stick {
+	@extend div.cookies;
+	
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	
+	border-top: solid 5px $body-font-color;
+}
+
+.before-cookies {
+	margin-bottom: 0;
+}
